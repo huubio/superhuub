@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Add a dark grey background color */
+    body {
+      background-color: #333;
+    }
+    
+    /* Make the header and body copy white */
+    h1, p {
+      color: #fff;
+    }
+    
+    /* Style the header and body copy on scroll */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 1;
+    }
+    .header h1 {
+      padding: 10px;
+      margin: 0;
+      text-align: center;
+    }
+    .body-copy {
+      margin: 50px;
+    }
+    .scrolled .header {
+      background-color: #666;
+    }
+    .scrolled .header h1 {
+      color: #333;
+    }
+    .scrolled .body-copy {
+      color: #666;
+    }
+    
+    /* Add a fade-in animation to the body copy */
+    .body-copy {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .scrolled .body-copy {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Add a fixed header with white text -->
+  <div class="header">
+    <h1>Header</h1>
+  </div>
+  
+  <!-- Add some white body copy -->
+  <div class="body-copy">
+    <p>Body copy</p>
+  </div>
+  
+  <!-- Repeat the header and body copy three times -->
+  <div class="header">
+    <h1>Header</h1>
+  </div>
+  <div class="body-copy">
+    <p>Body copy</p>
+  </div>
+  <div class="header">
+    <h1>Header</h1>
+  </div>
+  <div class="body-copy">
+    <p>Body copy</p>
+  </div>
+  
+  <!-- Add a scroll event listener to change the header and body copy on scroll -->
+  <script>
+    window.onscroll = function() {
+      if (window.pageYOffset > 50) {
+        document.querySelector(".header").classList.add("scrolled");
+        document.querySelector(".body-copy").classList.add("scrolled");
+      } else {
+        document.querySelector(".header").classList.remove("scrolled");
+        document.querySelector(".body-copy").classList.remove("scrolled");
+      }
+    }
+  </script>
+</body>
+</html>
